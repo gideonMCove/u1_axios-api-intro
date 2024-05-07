@@ -15,3 +15,15 @@ const getBreeds = async () => {
 }
 
 getBreeds()
+
+const button = document.querySelector("#btn")
+const breedInput = document.querySelector("#searchbar")
+const imageContainer = document.querySelector("#imgContainer")
+
+
+button.addEventListener('click', async () => {
+    let breed = breedInput.value
+    console.log(breed)
+    let response = await axios.get(`https://dog.ceo/api/breed/${breed}/images/random`)
+    console.log(response.data.message)
+})
