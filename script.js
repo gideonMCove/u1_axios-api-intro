@@ -26,4 +26,7 @@ button.addEventListener('click', async () => {
     console.log(breed)
     let response = await axios.get(`https://dog.ceo/api/breed/${breed}/images/random`)
     console.log(response.data.message)
+    let dogPic = response.data.message
+    imageContainer.setAttribute('src', dogPic)
+
 })
